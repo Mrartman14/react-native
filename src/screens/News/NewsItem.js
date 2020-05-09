@@ -4,15 +4,16 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 function NewsItem(props) {
   return (
     <View style={newsItemStyles.container}>
-      <Image style={newsItemStyles.Image} source={{uri: props.data.uri}} />
-      <Text
-        style={newsItemStyles.heading}
-        onPress={() =>
-          props.navigation.navigate('News item', {data: props.data})
-        }>
-        {props.data.heading}
+      <Image
+        style={newsItemStyles.Image}
+        source={{uri: props.route.params.data.uri}}
+      />
+      <Text style={newsItemStyles.heading}>
+        {props.route.params.data.heading}
       </Text>
-      <Text style={newsItemStyles.description}>{props.data.description}</Text>
+      <Text style={newsItemStyles.description}>
+        {props.route.params.data.description}
+      </Text>
     </View>
   );
 }
@@ -29,7 +30,6 @@ const newsItemStyles = StyleSheet.create({
   container: {
     alignItems: 'center',
     marginBottom: 20,
-    borderBottomWidth: 2,
   },
   heading: {
     fontWeight: 'bold',
@@ -38,9 +38,3 @@ const newsItemStyles = StyleSheet.create({
     color: 'red',
   },
 });
-
-/*
-  <Image>
-    resizeMode="contain || cover || stretch || center || repeat"
-    source={require('./path')} || {{uri: 'url'}}
-*/

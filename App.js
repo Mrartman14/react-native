@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Layout from './src/components/views/Layout';
+import Navigation from './src/navigation';
 
 function App() {
-  return <Layout />;
+  return <Navigation />;
 }
 
 export default App;

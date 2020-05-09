@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-function DocumentsPage() {
+function Documents() {
   return (
     <View>
       <Text>DOCUMENTS!!!</Text>
@@ -9,4 +9,4 @@ function DocumentsPage() {
   );
 }
 
-export default DocumentsPage;
+export default Documents;
