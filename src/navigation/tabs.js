@@ -1,24 +1,38 @@
 import React from 'react';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-const MaterialBottomTabs = createMaterialBottomTabNavigator();
-const MaterialTopTabs = createMaterialTopTabNavigator();
+import {profileStack, newsStack} from './stacks';
+import {Documents, Products, Contacts} from '../screens';
+import {
+  BottomTabScreenOptions,
+  BottomTabBarOptions,
+} from '../styles/screenOptions';
 
-const topTabs = () => (
-  <MaterialTopTabs.Navigator>
-    <MaterialTopTabs.Screen name="tab1" component={1} />
-    <MaterialTopTabs.Screen name="tab2" component={2} />
-    <MaterialTopTabs.Screen name="tab3" component={3} />
-  </MaterialTopTabs.Navigator>
+/* верхнее меню */
+const topTabs = createMaterialTopTabNavigator();
+const TopTabs = () => (
+  <topTabs.Navigator>
+    <topTabs.Screen name="Profile" children={profileStack} />
+    <topTabs.Screen name="News" children={newsStack} />
+    <topTabs.Screen name="Documents" component={Documents} />
+    <topTabs.Screen name="Материалы" component={Products} />
+    <topTabs.Screen name="Материалы" component={Contacts} />
+  </topTabs.Navigator>
 );
 
-const bottomTabs = () => (
-  <MaterialBottomTabs.Navigator>
-    <MaterialBottomTabs.Screen name="tab1" component={1} />
-    <MaterialBottomTabs.Screen name="tab2" component={2} />
-    <MaterialBottomTabs.Screen name="tab3" component={3} />
-  </MaterialBottomTabs.Navigator>
+/* нижнее меню */
+const bottomTabs = createBottomTabNavigator();
+const BottomTabs = () => (
+  <bottomTabs.Navigator
+    screenOptions={BottomTabScreenOptions}
+    tabBarOptions={BottomTabBarOptions}>
+    <bottomTabs.Screen name="Новости" children={newsStack} />
+    <bottomTabs.Screen name="Где купить" component={Contacts} />
+    <bottomTabs.Screen name="Витрина" component={Products} />
+    <bottomTabs.Screen name="Материалы" component={Documents} />
+    <bottomTabs.Screen name="Профиль" children={profileStack} />
+  </bottomTabs.Navigator>
 );
 
-export {topTabs, bottomTabs};
+export {TopTabs, BottomTabs};

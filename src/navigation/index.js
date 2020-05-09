@@ -1,11 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {MainDrawer} from './drawers';
+import {BottomTabs} from './tabs';
 
 const navigation = () => (
   <NavigationContainer>
-    <MainDrawer />
+    <BottomTabs />
   </NavigationContainer>
 );
 

@@ -6,6 +6,7 @@ import {Documents} from '../screens';
 
 const Drawer = createDrawerNavigator();
 
+/* боковое меню */
 const MainDrawer = () => (
   <Drawer.Navigator>
     <Drawer.Screen name="Profile" children={profileStack} />
