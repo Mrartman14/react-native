@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native';
 
-import NewsItem from '../../components/common/NewsItem';
+import {NewsItem} from 'lib/components';
 
 import newsList from '../../../backend/news';
 

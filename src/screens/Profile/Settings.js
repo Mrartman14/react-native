@@ -1,14 +1,21 @@
-//сделать тут настройку темок
 import React from 'react';
-import {Button, View, Text} from 'react-native';
+import {Button, View, Text, StyleSheet} from 'react-native';
+
+import {RadioGroup} from 'lib/components';
 
 function Settings(props) {
   return (
-    <View>
-      <Text>SETTINGS COMPONENT</Text>
-      <Button title="Go back" />
+    <View style={styles.container}>
+      <Text>Режим</Text>
+      <RadioGroup list={['ночной', 'дневной']} />
     </View>
   );
 }
 
 export default Settings;
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+  },
+});

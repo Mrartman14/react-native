@@ -1,14 +1,14 @@
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'SET_NAME':
+    case 'SET_LIGHT_THEME':
       return {
         ...state,
-        name: action.value,
+        theme: 'ligth',
       };
-    case 'SET_AGE':
+    case 'SET_DARK_THEME':
       return {
         ...state,
-        age: action.value,
+        theme: 'dark',
       };
     default:
       throw new Error('unknown action type');

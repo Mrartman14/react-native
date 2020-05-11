@@ -2,7 +2,7 @@ import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import {profileStack, newsStack} from './stacks';
-import {Documents} from '../screens';
+import {Documents} from 'screens';
 
 const Drawer = createDrawerNavigator();
 

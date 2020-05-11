@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {News, Profile, Privacy, Settings, NewsItem} from '../screens';
+import {News, Profile, Privacy, Settings, NewsItem} from 'screens';
 
 const profileStack = () => {
   const Stack = createStackNavigator();
@@ -10,6 +10,7 @@ const profileStack = () => {
       initialRouteName="Profile"
       mode="modal"
       screenOptions={{
+        //сделать стили по-нормальному
         headerTintColor: 'white',
         headerStyle: {backgroundColor: 'gray'},
       }}>
